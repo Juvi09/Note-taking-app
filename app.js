@@ -11,6 +11,7 @@ function eventListeners() {
     document.addEventListener('DOMContentLoaded', displayNotes);
     document.getElementById('add-note-btn').addEventListener('click', addNewNote);
     noteListDiv.addEventListener('click', deleteNote);
+    document.getElementById('delete-all-btn').addEventListener('click', deleteAllNotes);
 }
 
 eventListeners();
@@ -92,4 +93,17 @@ function deleteNote(e){
         });
         localStorage.setItem('notes', JSON.stringify(newNotesList));
     }
+}
+
+// delete all notes
+function deleteAllNotes(){
+    localStorage.removeItem('notes');
+    let noteList = document.querySelectorAll('.note-item');
+    if(noteList.length > 0){
+        noteList.forEach(item => {
+           noteListDiv.removeChild(item);
+        });
+    }
+    noteID = 1;
+    
 }
