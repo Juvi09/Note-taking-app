@@ -25,15 +25,15 @@ body {
     margin-bottom: 1rem;
 }
 .note-input h3 {
-    color: var --bittersweet;
+    color: var(--bittersweet);
 }
 .note-wrapper {
-    margin: 0.7rem;
+    margin: 0.7rem 0;
     padding: 0.5rem 0;
 }
 #note-title,
 #note-content {
-    width: 100px;
+    width: 100%;
     border: 2px solid rgb(0, 0, 0, 0.2);
     font-size: 1.05rem;
     padding: 0.55rem;
